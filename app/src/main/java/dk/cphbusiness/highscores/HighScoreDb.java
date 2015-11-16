@@ -1,14 +1,17 @@
 package dk.cphbusiness.highscores;
 
+import android.annotation.TargetApi;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.os.Build;
 import android.util.Log;
 import static dk.cphbusiness.highscores.HighScoreDbHelper.*;
 
-public class HighScoreDb {
+@TargetApi(Build.VERSION_CODES.KITKAT)
+public class HighScoreDb implements AutoCloseable {
 	private static final String LOG_TAG = "HighScoreDb";
 	private SQLiteDatabase db;
 	private final Context context;
