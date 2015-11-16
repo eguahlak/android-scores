@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">HighScores</string>
+    <string name="name_text">Name:</string>
+</resources>
