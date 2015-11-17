@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="dk.cphbusiness.highscores" >
 
-    <!-- uses-permission android:name="android.permission.WRITE_SMS" /-->
+    <!-- uses-permission android:name="android.permission.WRITE_SMS" / -->
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
@@ -21,11 +21,20 @@
         </activity>
         <activity android:name=".ScoreListActivity" >
         </activity>
-        <receiver android:name=".SmsReceiver" android:exported="true">
-            <intent-filter android:priority="1000">
+
+        <receiver
+            android:name=".SmsReceiver"
+            android:exported="true" >
+            <intent-filter android:priority="1000" >
                 <action android:name="android.provider.Telephony.SMS_RECEIVE" />
             </intent-filter>
         </receiver>
+
+        <service
+            android:name=".DowngradeService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
     </application>
 
 </manifest>
