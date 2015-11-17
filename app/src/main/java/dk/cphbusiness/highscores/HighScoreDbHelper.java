@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class HighScoreDbHelper extends SQLiteOpenHelper{
+public class HighScoreDbHelper extends SQLiteOpenHelper {
     public static final String DATABASE = "datastorage";
     public static final int VERSION = 1;
     public static final String TABLE = "highscores";
@@ -33,11 +33,11 @@ public class HighScoreDbHelper extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
         try {
             db.execSQL(CREATE_TABLE_SQL);
+            Log.v(LOG_TAG, "Database " + DATABASE + " created");
             }
         catch (SQLiteException sqle) {
             Log.e(LOG_TAG, "Could not create database "+DATABASE);
             }
-        Log.v(LOG_TAG, "Database " + DATABASE + " created");
         }
 
     @Override

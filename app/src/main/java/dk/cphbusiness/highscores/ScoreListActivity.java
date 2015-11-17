@@ -38,8 +38,8 @@ public class ScoreListActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         db.close();
+        super.onDestroy();
         }
 
     }

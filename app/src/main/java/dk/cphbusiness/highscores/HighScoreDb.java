@@ -21,7 +21,7 @@ public class HighScoreDb implements AutoCloseable {
 		this.context = context;
 		helper = new HighScoreDbHelper(context);
 		}
-	
+
 	public void close() { db.close(); }
 	
 	public void open() {
